@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModernHR</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">ModernHR</div>
+        <nav>
+            <div class="nav-item active" data-view="home">Home</div>
+            <div class="nav-item" data-view="profile">My Info</div>
+            <div class="nav-item" data-view="directory">People</div>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <!-- Home View -->
+        <div class="home-content active">
+            <div class="welcome-header">
+                <div class="welcome-title">Welcome back, <span id="welcome-name">John</span></div>
+                <div style="color: var(--text-secondary)">Here's what's happening in your workspace</div>
+                <div class="quick-actions">
+                    <div class="action-button" data-action="view-profile">View My Info</div>
+                    <div class="action-button" data-action="time-off">Request Time Off</div>
+                    <div class="action-button" data-action="view-team">View Team</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Directory View -->
+        <div class="directory-content">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search people by name, role, or department...">
+            </div>
+            <div class="section-title">People</div>
+            <div class="people-grid">
+                <!-- People cards will be dynamically populated -->
+            </div>
+        </div>
+
+        <!-- Profile View -->
+        <div class="profile-content">
+            <div class="back-button">← Back</div>
+            <div class="profile-header">
+                <h1 class="profile-title">Profile Information</h1>
+            </div>
+            <div class="profile-tabs">
+                <div class="profile-tab active" data-section="personal">Personal</div>
+                <div class="profile-tab" data-section="job">Job</div>
+                <div class="profile-tab" data-section="compensation">Compensation</div>
+                <div class="profile-tab" data-section="documents">Documents</div>
+            </div>
+            <div class="section" data-section="personal">
+                <div class="section-title">Personal Information</div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Employee #</label>
+                        <input type="text" class="form-control" data-field="employeeId" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" data-field="firstName">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Middle Name</label>
+                        <input type="text" class="form-control" data-field="middleName">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" data-field="lastName">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Preferred Name</label>
+                        <input type="text" class="form-control" data-field="preferredName">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Birth Date</label>
+                        <input type="date" class="form-control" data-field="birthDate">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">SSN</label>
+                        <input type="password" class="form-control" data-field="ssn">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Gender</label>
+                        <select class="form-control" data-field="gender">
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="non-binary">Non-binary</option>
+                            <option value="prefer-not-to-say">Prefer not to say</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+type Employee = 
+ record {
+   birthDate: opt text;
+   department: text;
+   email: text;
+   employeeId: text;
+   firstName: text;
+   gender: opt text;
+   id: text;
+   lastName: text;
+   middleName: opt text;
+   preferredName: opt text;
+   ssn: opt text;
+   title: text;
+ };
+service : {
+  getAllEmployees: () -> (vec Employee) query;
+  getCurrentUser: () -> (Employee) query;
+  getEmployee: (text) -> (opt Employee) query;
+  searchEmployees: (text) -> (vec Employee) query;
+  updateEmployee: (text, Employee) -> (bool);
+}
